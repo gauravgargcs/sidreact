@@ -129,7 +129,7 @@ export default function MainHeader() {
             variant="contained"
             color="primary"
             rel="noopener"
-            href="/register"
+            href="/componentsNew/register"
             // onClick={handleClickSignUpOpen}
             startIcon={<Image src="/assets/icons/signup.png" width="18px" height="18px" />}
           >
@@ -140,7 +140,7 @@ export default function MainHeader() {
             variant="contained"
             color="secondary"
             rel="noopener"
-            href="/login"
+            href="/componentsNew/login"
             // onClick={handleClickLoginOpen}
             startIcon={<Image src="/assets/icons/login.png" width="18px" height="18px" />}
           >
