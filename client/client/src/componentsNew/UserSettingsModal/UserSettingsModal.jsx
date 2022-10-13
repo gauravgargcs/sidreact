@@ -6,6 +6,14 @@ import { Modal, Tab } from 'semantic-ui-react';
 import AccountPane from './AccountPane';
 import PreferencesPane from './PreferencesPane';
 
+// import { Grid, ButtonGroup, Button, Switch } from '@mui/material';
+// import dot1 from '../../assets/new-image/setting-dot1.png';
+// import dot2 from '../../assets/new-image/setting-dot2.png';
+// import UserImage from '../../assets/new-image/user-image.png';
+// import edit from '../../assets/new-image/edit-icon.png';
+// import lock from '../../assets/new-image/lock-icon.png';
+// import cross from '../../assets/new-image/cross-icon.png';
+
 const UserSettingsModal = React.memo(
   ({
     email,
@@ -39,7 +47,7 @@ const UserSettingsModal = React.memo(
           context: 'title',
         }),
         render: () => (
-          <AccountPane 
+          <AccountPane
             email={email}
             name={name}
             username={username}
@@ -59,7 +67,7 @@ const UserSettingsModal = React.memo(
             onPasswordUpdate={onPasswordUpdate}
             onPasswordUpdateMessageDismiss={onPasswordUpdateMessageDismiss}
             onCloseAccount={onCloseAccount}
-            theme = {theme}
+            theme={theme}
           />
         ),
       },
@@ -73,16 +81,87 @@ const UserSettingsModal = React.memo(
       },
     ];
 
+    // const [checked, setChecked] = React.useState(true);
+
+    // const handleChange = (event) => {
+    //   setChecked(event.target.checked);
+    // };
+
     return (
-      <Modal open closeIcon onClose={onClose} id='settings-modal' className = {classNames(theme)}>
-        <Tab
+      <>
+        {/* setting-page-new-design */}
+        {/* <div className="setting-tab-content">
+          <div className="setting-main">
+            <Grid container spacing={2}>
+              <Grid item sm={12} md={6} className="setting-account">
+                <div className='setting-list-account'>
+                  <div className='setting-list-heading'>
+                    <h3><img src={dot1} alt="" /> Account</h3>
+                    <img src={UserImage} alt="" />
+                  </div>
+                </div>
+                <div className='setting-list-btns'>
+                  <ButtonGroup variant="contained" className='setting-lists-btn' aria-label="outlined primary button group">
+                    <Button className="setting-btn-edit btn-img"><img src={edit} alt="" /> Edit User Name</Button>
+                    <Button className="setting-btn-lock btn-img"><img src={lock} alt="" /> Edit Password</Button>
+                    <Button className="setting-btn-cross btn-img"><img src={cross} alt="" /> Close Account</Button>
+                  </ButtonGroup>
+                </div>
+                <div className='seting-list-form'>
+                  <form>
+                    <div className="form-group">
+                      <label htmlFor="name">Name</label>
+                      <input id="name" type="text" />
+                    </div>
+                    <div className="form-group">
+                      <label htmlFor="phone">Phone</label>
+                      <input id="phone" type="text" />
+                    </div>
+                    <div className="form-group">
+                      <label htmlFor="organization">Organization</label>
+                      <input id="organization" type="text" />
+                    </div>
+                    <div className="form-group">
+                      <label htmlFor="email">Email</label>
+                      <input id="email" type="text" />
+                    </div>
+                    <button className='seting-list-btn'>Save</button>
+                  </form>
+                </div>
+              </Grid>
+              <Grid item sm={12} md={6} className="setting-preferences">
+                <div className='setting-list-account'>
+                  <div className='setting-list-heading'>
+                    <h3><img src={dot2} alt="" /> Preferences</h3>
+                  </div>
+                </div>
+                <div className='seting-list-form'>
+                  <div className="seting-pref-content">
+                    <Switch
+                      checked={checked}
+                      onChange={handleChange}
+                      inputProps={{ 'aria-label': 'controlled' }}
+                    />
+                    <p>Subscribe to my own cards by default</p>
+                  </div>
+                </div>
+              </Grid>
+            </Grid>
+          </div>
+        </div> */}
+        {/* setting-page-new-design end */}
+
+        <Modal open closeIcon onClose={onClose} id='settings-modal' className={classNames(theme)}>
+          <Tab
             menu={{
               secondary: true,
               pointing: true,
             }}
             panes={panes}
           />
-      </Modal>
+        </Modal>
+
+      </>
     );
   },
 );
